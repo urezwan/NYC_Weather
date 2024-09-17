@@ -24,7 +24,8 @@ print(response)
     # f.write(response)
 
     
-df = pd.read_csv(io.StringIO(response))
+df = pd.read_csv(io.StringIO(response))[['name','tempmax', 'tempmin', 'temp']]
+df
 # df.head(4)
 
 
@@ -48,4 +49,10 @@ engine = create_engine(connection_string)
 # Write the DataFrame to SQL Server as a new table
 df.to_sql('Weather_33_Columns', engine, if_exists='replace', index=False)
 
-
+#########################
+# Next steps:
+# 1. Git Inititate (already done) and then link to Github
+# 2. Call the SQL stored procedure from Python   
+# 3. Incorporate Python logging module
+# 4. Refactor the stored procedure's INSERT INTO to something more appropriate (to address duplication potential)
+# 5. Use Task Scheduler and then orchetrate from Python
