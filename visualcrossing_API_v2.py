@@ -16,6 +16,9 @@ import sqlalchemy
 import pymssql
 from sqlalchemy import create_engine
 
+import logging
+
+
 
 url = f'https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/New%20York%20City/2024-09-20/2024-09-22?unitGroup=metric&include=days&key=CZV6ELVZB69ZXLTZWAZCZQ3CC&contentType=csv'
 response = requests.get(url).text
